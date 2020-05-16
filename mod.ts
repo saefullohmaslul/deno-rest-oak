@@ -1,9 +1,6 @@
-import { oak } from "./deps.ts";
+import { app } from "./apps/application.ts";
 
-const app = new oak.Application();
+const PORT: number = 8080;
 
-app.use((ctx) => {
-  ctx.response.body = "Hello World";
-});
-
-app.listen({ port: 8080 });
+app.listen({ port: PORT });
+console.log(`server running on port: ${PORT}`);
